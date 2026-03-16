@@ -104,7 +104,7 @@
     NIXOS_OZONE_WL = "1";
     MOZ_ENABLE_WAYLAND = "1";
     QT_QPA_PLATFORM = "wayland";
-    SDL_VIDEODRIVER = "wayland";
+    SDL_VIDEODRIVER = "wayland,x11,windows";
     XDG_SESSION_TYPE = "wayland";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     GDK_BACKEND = "wayland,x11";
@@ -117,10 +117,16 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
+    package = pkgs.steam.override {
+      extraPkgs = pkgs': with pkgs'; [
+          libXcursor libXi libXineram libXScrnSaver
+        ];
+    };
   };
 
   programs.gamemode = {
     enable = true;
+    capSysNice = true;
     settings = {
       general = {
         renice = 10;
@@ -131,11 +137,6 @@
         amd_performance_level = "high";
       };
     };
-  };
-
-  programs.gamescope = {
-    enable = true;
-    capSysNice = true;
   };
 
   # ── Packages ─────────────────────────────────────────────────────────────────

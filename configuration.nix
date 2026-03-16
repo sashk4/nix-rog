@@ -150,6 +150,7 @@
     neovim
     ghostty
     alacritty
+    pywal16
     eza
     rustup
     deno

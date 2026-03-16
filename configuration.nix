@@ -180,6 +180,7 @@
 
     # ── Wayland desktop essentials ──
     waybar
+    swww
     fuzzel
     mako
     swaylock

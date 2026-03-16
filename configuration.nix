@@ -166,6 +166,7 @@
     wget
     curl
     git
+    gh
     tree
 
     # ── Gaming ──

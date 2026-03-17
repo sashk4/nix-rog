@@ -153,7 +153,6 @@
     # ── Editors & terminal stuff ──
     vim
     neovim
-    lunarvim
     ghostty
     alacritty
     pywal16

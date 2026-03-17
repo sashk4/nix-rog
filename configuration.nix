@@ -47,7 +47,7 @@
   # };
 
   # ── Display / Wayland ────────────────────────────────────────────────────────
-  programs.niri.enable = true;
+  programs.hyprland.enable = true;
 
   # greetd + tuigreet as login manager (lightweight, works well with niri)
   services.greetd = {
@@ -119,14 +119,13 @@
     gamescopeSession.enable = true;
     package = pkgs.steam.override {
       extraPkgs = pkgs': with pkgs'; [
-          libXcursor libXi libXineram libXScrnSaver
+          libXcursor libXi libXinerama libXScrnSaver
         ];
     };
   };
 
   programs.gamemode = {
     enable = true;
-    capSysNice = true;
     settings = {
       general = {
         renice = 10;

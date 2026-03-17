@@ -200,6 +200,7 @@
     # ── System utilities ──
     networkmanagerapplet
     pavucontrol
+    easyeffects
     usbutils
     pciutils
     htop

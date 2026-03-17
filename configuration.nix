@@ -205,6 +205,7 @@
     networkmanagerapplet
     pavucontrol
     easyeffects
+    noisetorch
     usbutils
     pciutils
     htop

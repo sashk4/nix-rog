@@ -13,6 +13,14 @@
   boot.kernelModules = [
     "kvm-amd"    # AMD virtualisation
     "acpi_call"  # needed by some power tools
+    "iwlwifi"
+    "iwlmvm"
+    "mac80211"
+    "cfg80211"
+    "ptp"
+    "asus_wmi"
+    "hid_asus"
+    "ntsync"
   ];
 
   # GA402RJ-specific boot params
@@ -22,6 +30,18 @@
     "amdgpu.ppfeaturemask=0xffffffff"
     "quiet"
     "splash"
+  ];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "xhci_hcd" # usb
+    "nvme"
+    "usb_storage"
+    "sd_mod" # nvme / external usb storage
+    "rtsx_pci_sdmmc" # sdcard
+    "usbnet"
+    "amdgpu"
+    "spl" # try to fix systemd-udev-settle issue
+    "zfs" # try to fix systemd-udev-settle issue
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -99,6 +119,8 @@
       rocmPackages.clr.icd
     ];
   };
+
+  hardware.cpu.amd.ryzen-smu.enable = true;
 
   environment.variables = {
     AMD_VULKAN_ICD = "RADV";

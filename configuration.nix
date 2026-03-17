@@ -162,10 +162,6 @@
     # ── Browsers ──
     chromium
     zen-browser.packages.x86_64-linux.default
-    # NOTE: Zen browser is not in nixpkgs yet.
-    # To add it, convert this to a flake and add:
-    #   inputs.zen-browser.url = "github:youwen5/zen-browser-flake";
-    # then add to packages: inputs.zen-browser.packages.x86_64-linux.default
 
     # ── Dev basics ──
     wget
@@ -190,8 +186,10 @@
     fuzzel
     mako
     swaylock
+    rofi
     swayidle
     swaybg
+    dolphin
     wl-clipboard
     grim
     slurp

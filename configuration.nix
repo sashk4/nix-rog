@@ -19,6 +19,7 @@
   boot.kernelParams = [
     "amd_pstate=active"    # AMD P-state driver for better perf/efficiency
     "amdgpu.sg_display=0"  # fixes occasional display flicker on RDNA2
+    "amdgpu.ppfeaturemask=0xffffffff"
     "quiet"
     "splash"
   ];
@@ -53,7 +54,7 @@
   services.greetd = {
     enable = true;
     settings.default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
       user = "greeter";
     };
   };
@@ -87,7 +88,7 @@
   systemd.services.supergfxd.path = [ pkgs.pciutils ];
 
   # power-profiles-daemon integrates with asusd profile switching
-  services.power-profiles-daemon.enable = true;
+  services.power-profiles-daemon.enable = false;
 
   # ── AMD GPU ──────────────────────────────────────────────────────────────────
   hardware.graphics = {
@@ -132,7 +133,7 @@
       };
       gpu = {
         apply_gpu_optimisations = "accept-responsibility";
-        gpu_device = 0;
+        gpu_device = 1;
         amd_performance_level = "high";
       };
     };
@@ -152,6 +153,7 @@
     # ── Editors & terminal stuff ──
     vim
     neovim
+    lunarvim
     ghostty
     alacritty
     pywal16
@@ -189,7 +191,6 @@
     rofi
     swayidle
     swaybg
-    dolphin
     wl-clipboard
     grim
     slurp

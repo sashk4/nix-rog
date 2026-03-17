@@ -171,6 +171,10 @@
     gh
     tree
 
+    # ── Communication ──
+    vesktop
+    telegram-desktop
+
     # ── Gaming ──
     protonup-qt
     gamescope

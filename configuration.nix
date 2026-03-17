@@ -40,8 +40,6 @@
     "rtsx_pci_sdmmc" # sdcard
     "usbnet"
     "amdgpu"
-    "spl" # try to fix systemd-udev-settle issue
-    "zfs" # try to fix systemd-udev-settle issue
   ];
 
   # Use the systemd-boot EFI boot loader.

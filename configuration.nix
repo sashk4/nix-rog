@@ -206,6 +206,7 @@
     pavucontrol
     easyeffects
     noisetorch
+    xauth
     usbutils
     pciutils
     htop

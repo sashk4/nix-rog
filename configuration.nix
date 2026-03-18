@@ -6,6 +6,9 @@
       ./hardware-configuration.nix
     ];
 
+  # ── Boot ────────────────────────────────────────────────────────────────────
+  services.fwupd.enable = true;
+
   # ── Kernel ──────────────────────────────────────────────────────────────────
   # Latest kernel recommended by asus-linux for GA402RJ (6.10+ for best asusd support)
   boot.kernelPackages = pkgs.linuxPackages_latest;

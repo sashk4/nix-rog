@@ -4,14 +4,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      nixos-hardware.nixosModules.asus-zephyrus-ga402
     ];
-
-  # ── Boot ────────────────────────────────────────────────────────────────────
-  services.fwupd.enable = true;
 
   # ── Kernel ──────────────────────────────────────────────────────────────────
   # Latest kernel recommended by asus-linux for GA402RJ (6.10+ for best asusd support)
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  services.fwupd.enable = true;
 
   boot.kernelModules = [
     "kvm-amd"    # AMD virtualisation
@@ -28,6 +27,7 @@
 
   # GA402RJ-specific boot params
   boot.kernelParams = [
+    "acpi_osi=Linux"
     "amd_pstate=active"    # AMD P-state driver for better perf/efficiency
     "amdgpu.sg_display=0"  # fixes occasional display flicker on RDNA2
     "amdgpu.ppfeaturemask=0xffffffff"

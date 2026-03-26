@@ -182,6 +182,7 @@
     eza
     rustup
     deno
+    fzf
 
     # ── Browsers ──
     chromium

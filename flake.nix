@@ -8,10 +8,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, zen-browser, ... }: {
+  outputs = { self, nixpkgs, zen-browser, nixos-hardware, ... }: {
     nixosConfigurations.nix-rog = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit zen-browser; };
+      specialArgs = { inherit zen-browser nixos-hardware; };
       modules = [
         ./configuration.nix
       ];

@@ -1,17 +1,16 @@
-{ config, lib, pkgs, zen-browser, ... }:
+{ config, lib, pkgs, zen-browser, nixos-hardware, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      nixos-hardware.nixosModules.asus-zephyrus-ga402
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    nixos-hardware.nixosModules.asus-zephyrus-ga402
+  ];  
 
   # ── Kernel ──────────────────────────────────────────────────────────────────
   # Latest kernel recommended by asus-linux for GA402RJ (6.10+ for best asusd support)
   boot.kernelPackages = pkgs.linuxPackages_latest;
   services.fwupd.enable = true;
-
+  
   boot.kernelModules = [
     "kvm-amd"    # AMD virtualisation
     "acpi_call"  # needed by some power tools
@@ -166,6 +165,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
+  programs.nix-ld.enable =true;
   programs.fish.enable = true;
   programs.zoxide = {
     enable = true;
@@ -203,6 +203,7 @@
     gamescope
     mangohud
     lutris
+    atlauncher
 
     # ── ASUS / hardware tools ──
     asusctl
@@ -223,6 +224,10 @@
     brightnessctl
     playerctl
     xwayland-satellite
+    kdePackages.dolphin
+    kdePackages.qtsvg
+    kdePackages.kio-extras
+    kdePackages.kio-fuse
 
     # ── System utilities ──
     networkmanagerapplet

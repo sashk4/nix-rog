@@ -198,6 +198,9 @@
     vesktop
     telegram-desktop
 
+    # ── Library ──
+    calibre
+
     # ── Gaming ──
     protonup-qt
     gamescope

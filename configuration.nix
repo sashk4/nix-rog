@@ -232,6 +232,8 @@
     kdePackages.qtsvg
     kdePackages.kio-extras
     kdePackages.kio-fuse
+    jmtpfs
+    kdePackages.kdenlive
 
     # ── System utilities ──
     networkmanagerapplet

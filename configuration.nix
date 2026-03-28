@@ -215,6 +215,7 @@
 
     # ── Wayland desktop essentials ──
     waybar
+    mpv
     swww
     fuzzel
     mako

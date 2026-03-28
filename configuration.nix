@@ -217,6 +217,7 @@
     waybar
     mpv
     swww
+    nwg-look
     fuzzel
     mako
     swaylock

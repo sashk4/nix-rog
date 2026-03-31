@@ -182,6 +182,8 @@
     eza
     rustup
     deno
+    helix
+    gnumake
     fzf
 
     # ── Browsers ──

@@ -175,6 +175,7 @@
   environment.systemPackages = with pkgs; [
     # ── Editors & terminal stuff ──
     vim
+    ripgrep
     neovim
     ghostty
     alacritty
@@ -184,7 +185,10 @@
     deno
     helix
     gnumake
+    bun
+    yt-dlp
     fzf
+    wireguard-tools
 
     # ── Browsers ──
     chromium
@@ -241,6 +245,7 @@
 
     # ── System utilities ──
     networkmanagerapplet
+    ffmpeg
     pavucontrol
     easyeffects
     noisetorch

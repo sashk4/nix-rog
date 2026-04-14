@@ -29,7 +29,6 @@
     "acpi_osi=Linux"
     "amd_pstate=active"    # AMD P-state driver for better perf/efficiency
     "amdgpu.sg_display=0"  # fixes occasional display flicker on RDNA2
-    "amdgpu.ppfeaturemask=0xffffffff"
     "quiet"
     "splash"
   ];
@@ -175,6 +174,7 @@
   environment.systemPackages = with pkgs; [
     # ── Editors & terminal stuff ──
     vim
+    nodejs
     ripgrep
     neovim
     ghostty
@@ -188,7 +188,6 @@
     bun
     yt-dlp
     fzf
-    wireguard-tools
 
     # ── Browsers ──
     chromium
@@ -221,7 +220,10 @@
 
     # ── Wayland desktop essentials ──
     waybar
+    xwayland
+    obs-studio
     mpv
+    cairo
     swww
     nwg-look
     fuzzel

@@ -191,6 +191,7 @@
 
     # ── Browsers ──
     chromium
+    librewolf
     zen-browser.packages.x86_64-linux.default
 
     # ── Dev basics ──
@@ -199,6 +200,7 @@
     git
     gh
     tree
+    cutter
 
     # ── Communication ──
     vesktop
@@ -212,7 +214,7 @@
     gamescope
     mangohud
     lutris
-    atlauncher
+    prismlauncher
 
     # ── ASUS / hardware tools ──
     asusctl
@@ -236,14 +238,17 @@
     grim
     slurp
     brightnessctl
+    bibata-cursors
     playerctl
     xwayland-satellite
     kdePackages.dolphin
     kdePackages.qtsvg
     kdePackages.kio-extras
     kdePackages.kio-fuse
+    wireguard-tools
     jmtpfs
     kdePackages.kdenlive
+    bitwig-studio
 
     # ── System utilities ──
     networkmanagerapplet
@@ -273,7 +278,7 @@
   users.users.sashk4 = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" "video" "input" "gamemode" ];
+    extraGroups = [ "wheel" "audio" "networkmanager" "video" "input" "gamemode" ];
     packages = with pkgs; [
       tree
     ];

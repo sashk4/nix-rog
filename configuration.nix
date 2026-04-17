@@ -13,7 +13,6 @@
   
   boot.kernelModules = [
     "kvm-amd"    # AMD virtualisation
-    "acpi_call"  # needed by some power tools
     "iwlwifi"
     "iwlmvm"
     "mac80211"
@@ -40,7 +39,6 @@
     "sd_mod" # nvme / external usb storage
     "rtsx_pci_sdmmc" # sdcard
     "usbnet"
-    "amdgpu"
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -226,7 +224,7 @@
     obs-studio
     mpv
     cairo
-    swww
+    awww
     nwg-look
     fuzzel
     mako
@@ -263,6 +261,10 @@
     ripgrep
     fd
     unzip
+    cmake
+    ninja
+    gcc
+    pkg-config
   ];
 
   # ── Fonts ────────────────────────────────────────────────────────────────────

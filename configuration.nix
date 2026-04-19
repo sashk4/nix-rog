@@ -67,22 +67,6 @@
   # ── Display / Wayland ────────────────────────────────────────────────────────
   programs.hyprland.enable = true;
 
-  # greetd + tuigreet as login manager (lightweight, works well with niri)
-  services.greetd = {
-    enable = true;
-    settings.default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
-      user = "greeter";
-    };
-  };
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   # ── Audio ────────────────────────────────────────────────────────────────────
   services.pipewire = {
     enable = true;
@@ -92,17 +76,10 @@
   };
   security.rtkit.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
   # ── ASUS ROG hardware ────────────────────────────────────────────────────────
   # asusd handles fan curves, keyboard backlight, power profiles, etc.
   # ROG Control Center GUI is bundled with the asusd module automatically.
   services.asusd.enable = true;
-
-  # supergfxctl for GPU switching (integrated <-> dGPU)
-  services.supergfxd.enable = true;
-  systemd.services.supergfxd.path = [ pkgs.pciutils ];
 
   # power-profiles-daemon integrates with asusd profile switching
   services.power-profiles-daemon.enable = false;
@@ -116,8 +93,6 @@
       rocmPackages.clr.icd
     ];
   };
-
-  hardware.cpu.amd.ryzen-smu.enable = true;
 
   environment.variables = {
     AMD_VULKAN_ICD = "RADV";
@@ -186,6 +161,7 @@
     bun
     yt-dlp
     fzf
+    fastfetch
 
     # ── Browsers ──
     chromium
@@ -230,7 +206,6 @@
     mako
     swaylock
     rofi
-    swayidle
     swaybg
     wl-clipboard
     grim
